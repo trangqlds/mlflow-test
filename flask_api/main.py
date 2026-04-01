@@ -74,6 +74,9 @@ model, vectorizer = load_model_and_vectorizer("my_model", "6", "./tfidf_vectoriz
 # model, vectorizer = load_model("./lgbm_model.pkl", "./tfidf_vectorizer.pkl")
 
 
+app.route('/')
+def home():
+    return "Welcome to our flask api"
 # 
 @app.route('/predict_with_timestamps', methods=['POST'])
 def predict_with_timestamps():
@@ -116,9 +119,7 @@ def predict_with_timestamps():
     response = [{"comment": comment, "sentiment": sentiment, "timestamp": timestamp} for comment, sentiment, timestamp in zip(comments, predictions, timestamps)]
     return jsonify(response)
 
-app.route('/')
-def home():
-    return "Welcome to our flask api"
+
 
 
 
