@@ -47,7 +47,7 @@ def preprocess_comment(comment):
 # load the mdoel and vectorizer from the model registry 
 def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
     # set MLflow tracking URI to your server
-    mlflow.set_tracking_uri("http://ec2-18-175-137-109.eu-west-2.compute.amazonaws.com:5000/")
+    mlflow.set_tracking_uri("http://ec2-18-130-233-67.eu-west-2.compute.amazonaws.com:5000/")
     client = MlflowClient()
     model_uri = f"models:/{model_name}/{model_version}"
     model = mlflow.pyfunc.load_model(model_uri)
